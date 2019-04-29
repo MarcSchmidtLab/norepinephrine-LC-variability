@@ -1,0 +1,52 @@
+% 	adapting from corr_waves.m
+
+clear all
+close all
+
+cd ('Z:\Afrah\OR18\Songs\5_27_14\CutSong')
+load song_all.mat
+
+n = 10;
+twin = 25;
+all_corr = [];
+all_smoothsong = [];
+
+songall = songall';
+
+for k = 1:n;
+
+        ccc=[];                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+        i=1;
+           
+    while k+i <= n
+        a = Smoothtrace (abs(songall(k,:)),twin);
+        b = Smoothtrace (abs(songall(k+i,:)),twin);
+        figure(1)
+        plot(a)
+        hold on
+        plot(b)
+        ab = xcorr(a,b, 'coeff');
+        cc = max(ab);
+        ccc = [ccc,cc];
+        i = i+1;
+    end
+    
+all_corr = [all_corr,ccc];
+
+k = k+1;
+
+end
+
+for k = 1:n+1;
+    c = Smoothtrace (abs(songall(k,:)),twin);
+    all_smoothsong = [all_smoothsong;c];
+    figure(2);
+    imagesc(all_smoothsong);
+    k=k+1;
+end
+
+average = mean(all_corr)
+standard = std(all_corr)
+
+cd Z:\Afrah\OR18\Songs\CorrSong\
+save allcorr all_corr all_smoothsong
