@@ -1,0 +1,14 @@
+-save vs save as 
+-mouse dragging
+-loading entire analysis, analysis "header function"
+-better feature picking on timing templates
+-state control, e.g. clearing axes and data structures
+-manual sequence input?
+-save sequence data?
+
+
+-play example of sequence in clipanalysis
+-saving raw template signals? how to map w/ DTW
+-wavbrowser zooming, automatic turn off when clicking on day or time window?
+-fix slider scope in clip_classification
+-note based analysis
