@@ -1,0 +1,18 @@
+function tdiff = calctdiff(tms1,tms2)
+
+len1 = length(tms1);
+len2 = length(tms2);
+
+maxlen = 2000;
+
+k1 = ceil(len1/maxlen);
+k2 = ceil(len2/maxlen);
+
+tdiff = zeros(maxlen^2 
+
+for ind1 = 1:k1
+    for ind2 = 1:k2
+        
+        
+    end
+end
